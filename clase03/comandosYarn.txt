@@ -1,0 +1,18 @@
+
+Pasos para la Ejecución en Yarn
+(Para usar yarn, hay que instalarlo globalmente: npm install -g yarn)
+
+1. yarn init
+
+2. yarn add express hbs path dotenv
+
+3. Agregar el script al package.json
+
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+
+4. yarn run index.js
+
+5. Instalar dependencias: yarn install
+
