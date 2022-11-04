@@ -4,16 +4,14 @@ const dotenv = require('dotenv').config();
 const cors = require('cors');
 require('./database/conexion')
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 const PersonaControllers = require('./controllers/persona');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-/* app.use(cors({
-    origin: 'http://localhost:3000'
-})); */
+app.use(cors()); 
 
 app.get('/', async (req, res) => {
     /* res.send('Los ususarios están listos') */

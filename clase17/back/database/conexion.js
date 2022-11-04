@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 require('dotenv').config();
-const URL = process.env.MONGO;
+const URL = process.env.MONGOATLAS;
 
 const conexion =  mongoose.connect(URL, { 
     useNewUrlParser: true, 
@@ -17,6 +17,8 @@ mongoose.connection.on('error', () => {
 })
 
 module.exports = conexion;
+
+
 
 
 
