@@ -26,6 +26,13 @@ app.post('/crear', async (req, res) => {
     res.json('Usuario Creado')
 });
 
+app.delete('/:id', async (req, res) => {
+    console.log(req.params.id);
+    const id = req.params.id;
+    await PersonaControllers.delete(id);
+    res.json('Usuario Eliminado')
+});
+
 
 app.listen(PORT, ()=>{
     console.log(`Servidor corriendo en el Puerto: ${PORT}`);

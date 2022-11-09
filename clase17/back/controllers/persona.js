@@ -19,6 +19,16 @@ class PersonaControllers {
             throw error;
         }
     }
+
+    async delete(id){
+        try {
+            await Persona.findByIdAndDelete(id)
+        } catch (error) {
+            throw error;
+        }
+    }
+
+
 }
 
 module.exports = new PersonaControllers;

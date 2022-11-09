@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Button, Form } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 const Formulario = () => {
+
+  const URL = 'http://localhost:3001/crear';
 
   const [inputs, setInputs] = useState({
     nombre: "",
@@ -18,11 +21,18 @@ const Formulario = () => {
   };
 
   const handleClick = async () => {
-    await axios.post("http://localhost:3001/crear", inputs)
+    await axios.post(URL, inputs)
     setInputs({
       nombre: "",
       apellido: "",
       dni: "",
+    })
+
+    Swal.fire({
+      title: 'Dato enviado Correctamente',
+      text: 'Gracias por enviar sus Datos',
+      icon: 'success',
+      confirmButtonText: 'Aceptar'
     })
   };
   
